@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proceso de Pago - Elements Spa</title>
+    <link rel="stylesheet" href="pago.css">
+</head>
+<!-- MODAL FACTURA -->
+<div id="facturaModal" class="modal" style="
+    display:none; 
+    position:fixed; 
+    top:0; left:0; 
+    width:100%; height:100%; 
+    background:rgba(0,0,0,.5); 
+    justify-content:center; 
+    align-items:center;
+">
+    <div style="
+        background:#fff; 
+        padding:20px; 
+        width:350px; 
+        border-radius:10px;
+        font-family:Poppins;
+    ">
+        <h2>Factura del Pedido</h2>
+        <div id="detalleFactura"></div>
+
+        <button id="cerrarFactura" style="
+            margin-top:15px;
+            padding:10px;
+            width:100%;
+            background:#333; 
+            color:#fff; 
+            border:none; 
+            border-radius:5px;
+            cursor:pointer;
+        ">Cerrar</button>
+    </div>
+</div>
+
+<!-- darle ID al botón -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".btn-pagar");
+    btn.setAttribute("id","btnPedido");
+});
+</script>
+
+<body>
+
+<header>
+    <a href="#" class="logo">
+        <img src="imagenes/LogoElements.png" width="60"> Elements Spa
+    </a>
+</header>
+
+<section class="progreso">
+    <span>Carrito de compras ➜ </span>
+    <span class="activo">Proceso de compra ➜ </span>
+    <span>Pedido completado</span>
+</section>
+
+<section class="contenedor">
+
+    <!-- FORMULARIO DE DATOS -->
+    <div class="formulario">
+
+        <h2>Detalles de Facturación</h2>
+
+        <form id="formFactura">
+
+            <div class="fila">
+                <div>
+                    <label>Nombres *</label>
+                    <input type="text" id="nombres" required>
+                </div>
+
+                <div>
+                    <label>Apellidos *</label>
+                    <input type="text" id="apellidos" required>
+                </div>
+            </div>
+
+            <label>Documento de Identidad</label>
+            <input type="text" id="dni">
+
+            <div class="fila">
+                <div>
+                    <label>Teléfono *</label>
+                    <input type="text" id="telefono" required>
+                </div>
+
+                <div>
+                    <label>Correo electrónico *</label>
+                    <input type="email" id="correo" required>
+                </div>
+            </div>
+
+            <label>Dirección *</label>
+            <input type="text" id="direccion" required>
+
+            <label>Ciudad *</label>
+            <input type="text" id="ciudad" required>
+
+        </form>
+    </div>
+
+    <!-- RESUMEN DEL PEDIDO -->
+    <div class="pedido">
+
+        <h2>Tu Pedido</h2>
+
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td id="prodNombre">Producto seleccionado × 1</td>
+                <td id="prodSubtotal">S/ 0.00</td>
+            </tr>
+            <tr class="total">
+                <td>Total</td>
+                <td id="prodTotal">S/ 0.00</td>
+            </tr>
+        </table>
+
+        <!-- MÉTODOS DE PAGO -->
+        <h3>Métodos de Pago</h3>
+
+        <label>
+            <input type="radio" name="pago" checked>
+            Tarjeta de crédito o débito
+        </label>
+
+        <img src="imagenes/tarjetas.png" class="tarjetas">
+
+        <label>
+            <input type="radio" name="pago">
+            Transferencia bancaria
+        </label>
+
+        <label class="terminos">
+            <input type="checkbox" id="terminos" required>
+            He leído y acepto los términos y condiciones *
+        </label>
+
+     
+<button id="btnPedido" class="btn-pagar">Realizar el Pedido</button>
+
+
+    </div>
+
+</section>
+
+<!-- MODAL FACTURA -->
+<div id="facturaModal" class="modal-factura">
+    <div class="factura-contenido">
+        <span id="cerrarFactura" class="cerrar">&times;</span>
+        <h2>Factura del Pedido</h2>
+        <div id="detalleFactura"></div>
+        <button onclick="window.print()" class="btn-pagar">Imprimir Factura</button>
+    </div>
+</div>
+
+
+
+</body>
+<script src="pago.js"></script>
+</html>

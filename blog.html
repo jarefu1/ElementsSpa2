@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Elements Spa - Inicio</title>
+        <link rel="stylesheet" href="blog.css">
+    </head>
+    <body>
+        <!-- banner superior --> 
+        <header>
+            <a href="#" class="logo">
+                <img src="imagenes/LogoElements.png" alt="Logo Elements Spa" width="70"> Elements Spa
+            </a>  
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+            <ul class="navlist">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="reservas.html" >Reservas</a></li>
+                <li><a href="productos.html" >Productos</a></li>
+            </ul>
+
+            <div>
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </header>
+        <section class="home" id="home">
+            <!-- HERO -->
+            <div class="hero">
+                <div class="hero-left">
+                    <h2 class="animated-title">Bienvenidos al Blog de Elements Spa</h2>
+                    <p class="lead">Consejos, promociones y detalles de nuestros servicios. Descubre cómo cuidarte y relajarte.</p>
+                    <a class="cta" href="#servicios">Ver servicios &raquo;</a>
+                </div>
+
+                <div class="hero-right">
+                    <!-- 3 videos verticales en iframes (pon tus IDs o rutas locales) -->
+                    <div class="vertical-videos">
+
+                        <video src="videos/video3.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOG GRID: tabla + carrusel + mapa -->
+            <div class="blog-grid">
+                <!-- TARJETA: Tabla de servicios (responsive) -->
+                <article class="card" id="servicios">
+                    <h3 class="card-title">Tabla de Servicios y Precios</h3>
+                    <div class="table-wrap">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Servicio</th>
+                                    <th>Duración</th>
+                                    <th>Precio</th>
+                                    <th>Notas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Masaje relajante</td>
+                                    <td>60 min</td>
+                                    <td>S/129</td>
+                                    <td class="tag">Promoción</td>
+                                </tr>
+                                <tr>
+                                    <td>Facial hidratante</td>
+                                    <td>45 min</td>
+                                    <td>S/89</td>
+                                    <td>Incluye limpieza</td>
+                                </tr>
+                                <tr>
+                                    <td>Reflexología podal</td>
+                                    <td>30 min</td>
+                                    <td>S/59</td>
+                                    <td>Ideal post-jornada</td>
+                                </tr>
+                                <tr>
+                                    <td>Paquete pareja</td>
+                                    <td>90 min</td>
+                                    <td>S/249</td>
+                                    <td class="tag">Descuento 15%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- CTA pequeña -->
+                    <p class="small-note">Reservas: <a href="contacto.html">Contáctanos</a></p>
+                </article>
+
+                <!-- TARJETA: Carrusel CSS-only (imagenes locales) -->
+                <article class="card">
+                    <h3 class="card-title">Galería rápida</h3>
+                    <div class="carousel">
+                        <div class="slides">
+                            <img src="imagenes/gal1.jpg" alt="Spa 1">
+                            <img src="imagenes/gal2.jpg" alt="Spa 2">
+                            <img src="imagenes/gal3.jpg" alt="Spa 3">
+                        </div>
+                    </div>
+                    <p class="small-note"></p>
+                </article>
+
+                <!-- TARJETA: Mapa (iframe) -->
+                <article class="card">
+                    <h3 class="card-title">Encuéntranos</h3>
+                    <!-- usa tu embed de Google Maps o reemplaza src con tu mapa -->
+                    <div class="map-wrap">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!2m..(TU_EMBED_AQUI)"
+                            title="Mapa Elements Spa"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p class="small-note">Horario: Lun-Dom 09:00 - 20:00</p>
+                </article>
+            </div>
+
+            <!-- FEED / POSTS RAPIDOS -->
+            <div class="posts">
+                <article class="post animated-card">
+                    <h4>Autocuidado en 5 pasos</h4>
+                    <p>Pequeños hábitos diarios para mantener una piel sana y una mente relajada.</p>
+                    <a href="#" class="readmore">Leer más</a>
+                </article>
+
+                <article class="post animated-card">
+                    <h4>Masaje para aliviar estrés</h4>
+                    <p>Qué técnicas usamos y por qué funcionan. Incluye testimonio.</p>
+                    <a href="#" class="readmore">Leer más</a>
+                </article>
+            </div>
+        </section>
+
+
+
+        <footer> 
+            <marquee>✨ Promoción del mes: Masaje relajante + facial por S/129 ✨</marquee>
+            <p>&copy; 2025 Elements Spa</p>
+        </footer>
+    </body>
+    <script src="blog.js"></script>
+</html>

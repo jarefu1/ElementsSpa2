@@ -1,0 +1,306 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 15 oct 2025, 5:08:11
+    Author     : USUARIO
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #ff9f0d;
+    --text-color: #fff;
+    --bg-color: #111;
+    --second-color: #9e9e9e;
+}
+
+/* ==== GENERAL ==== */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ==== HEADER ==== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10%;
+    background: transparent;
+    color: var(--text-color);
+    /* transición para cambios de estado */
+    transition: all 0.45s ease;
+    /* animación de carga (fade + descend) */
+    animation: headerEntrance 700ms cubic-bezier(.22,.9,.35,1) both;
+}
+
+/* Keyframes para la entrada del header */
+@keyframes headerEntrance {
+  0% { opacity: 0; transform: translateY(-12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 33px;
+    font-weight: 700;
+    gap: 12px;
+}
+
+/* Botón login: transición y pequeño pulso al focus/active */
+.login-btn {
+  background: var(--main-color);
+  color: var(--text-color);
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(255,159,13,0.15);
+  cursor: pointer;
+  transition: transform 250ms ease, box-shadow 250ms ease, background 250ms ease;
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Efecto hover/active */
+.login-btn:hover {
+  background: #ffa733;
+  box-shadow: 0 6px 30px rgba(255,167,59,0.18);
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Pulso sutil en estado focus (accesibilidad visual) */
+.login-btn:focus {
+  outline: none;
+  animation: btnPulse 1.6s infinite ease-in-out;
+}
+
+@keyframes btnPulse {
+  0% { box-shadow: 0 0 12px rgba(255,159,13,0.12); transform: translateY(0) scale(1); }
+  50% { box-shadow: 0 0 28px rgba(255,159,13,0.18); transform: translateY(-2px) scale(1.02); }
+  100% { box-shadow: 0 0 12px rgba(255,159,13,0.12); transform: translateY(0) scale(1); }
+}
+
+/* Navlist */
+.navlist{
+    display: flex;
+    gap: 1rem;
+}
+
+.navlist a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin: 0 18px;
+    transition: color 300ms ease, transform 250ms ease;
+    position: relative;
+}
+
+/* micro-animación: underline al pasar */
+.navlist a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: var(--main-color);
+  transition: width 300ms ease, left 300ms ease;
+  transform: translateX(-50%);
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+    transform: translateY(-2px);
+}
+
+.navlist a:hover::after {
+  width: 60%;
+  left: 50%;
+}
+
+/* ==== SECCIÓN HOME ==== */
+section.home {
+    padding: 160px 10% 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+    background: #1a1a1a;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--main-color);
+    width: 25%;
+    min-width: 220px;
+}
+
+.sidebar h2 {
+    color: var(--main-color);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.sidebar p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: var(--second-color);
+}
+
+/* ==== CONTENIDO PRINCIPAL ==== */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==== TEXTO Y BOTONES ==== */
+.home-content h1 {
+    font-size: 2.3em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.home-content span {
+    color: var(--main-color);
+}
+
+.btn, .btn2 {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.btn2 {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.btn:hover {
+    background: #ffa733;
+}
+
+.btn2:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* ==== FOOTER ==== */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer marquee {
+    color: gold;
+    font-weight: bold;
+}
+
+/* ==== FORMULARIOS LOGIN & REGISTRO ==== */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-color);
+}
+
+.form-box {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 159, 13, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid var(--main-color);
+}
+
+.form-box h2 {
+  color: var(--main-color);
+  margin-bottom: 25px;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 30px;
+  background: #2b2b2b;
+  color: var(--text-color);
+  outline: none;
+  text-align: center;
+}
+
+.form-box input::placeholder {
+  color: var(--second-color);
+}
+
+.form-box button {
+  background: var(--main-color);
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-box button:hover {
+  background: #ffa733;
+}
+
+.form-box p {
+  margin-top: 20px;
+  color: var(--second-color);
+  font-size: 0.9em;
+}
+
+.form-box a {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+/* ==== Diseño responsivo ==== */
+@media (max-width: 480px) {
+  .form-box {
+    padding: 25px;
+  }
+}

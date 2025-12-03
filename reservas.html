@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Reservas - Elements Spa</title>
+        <link rel="stylesheet" href="reservas.css">
+    </head>
+    <body>
+
+        <!-- Encabezado superior (NO MODIFICADO) -->
+        <header>
+            <a href="#" class="logo">
+                <img src="imagenes/LogoElements.png" alt="Logo Elements Spa" width="70"> Elements Spa
+            </a>
+
+            <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="reservas.html" class="active">Reservas</a></li>
+                <li><a href="productos.html" >Productos</a></li>
+            </ul>
+
+            <div>
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </header>
+
+        <!-- ============================= -->
+        <!--   CONTENIDO DE RESERVAS       -->
+        <!-- ============================= -->
+        <section class="reserva-section">
+
+            <div class="reserva-container">
+
+                <h1>Reserva tu Cita</h1>
+                <p class="subtitulo">
+                    Agenda tu momento de relajación con nuestra plataforma de reservas.
+                </p>
+
+                <form class="reserva-form">
+
+                    <div class="input-group">
+                        <label>Nombre completo</label>
+                        <input type="text" required placeholder="Ingresa tu nombre">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" required placeholder="ejemplo@gmail.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Servicio</label>
+                        <select required>
+                            <option disabled selected>Selecciona un servicio</option>
+                            <option>Masaje relajante</option>
+                            <option>Masaje descontracturante</option>
+                            <option>Tratamiento facial</option>
+                            <option>Sauna & Aromaterapia</option>
+                        </select>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Fecha</label>
+                            <input type="date" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Hora</label>
+                            <input type="time" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Comentarios adicionales</label>
+                        <textarea placeholder="Alguna indicación extra..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-reservar">Confirmar Reserva</button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <marquee>✨ Reserva tu cita y recibe un 10% de descuento en tu primera visita ✨</marquee>
+            <p>&copy; 2025 Elements Spa</p>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,224 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 19 nov. 2025, 00:17:42
+    Author     : HP
+*/
+
+/* ==== ESTILOS GLOBALES DEL PROYECTO ==== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+:root {
+    --main-color: #ff9f0d;
+    --text-color: #fff;
+    --other-color: #212121;
+    --second-color: #9e9e9e;
+    --bg-color: #111;
+
+    --big-font: 4.5rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+
+/* ==== HEADER ==== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10%;
+    background: transparent;
+    color: var(--text-color);
+    transition: all 0.45s ease;
+    animation: headerEntrance 700ms cubic-bezier(.22,.9,.35,1) both;
+}
+
+@keyframes headerEntrance {
+    0% { opacity: 0; transform: translateY(-12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 28px;
+    font-weight: 700;
+    z-index: 1001;
+}
+
+
+
+/* ==== BARRA DE PROGRESO ==== */
+.progreso {
+    text-align: center;
+    padding: 160px 0 30px;
+    font-size: 20px;
+    color: var(--second-color);
+}
+
+.progreso .activo {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+
+
+/* ==== CONTENEDOR PRINCIPAL ==== */
+.contenedor {
+    display: flex;
+    gap: 2rem;
+    padding: 40px 10%;
+}
+
+
+
+/* ==== FORMULARIO ==== */
+.formulario {
+    width: 60%;
+    background: var(--other-color);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #0007;
+}
+
+.formulario h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 20px;
+    color: var(--main-color);
+}
+
+.fila {
+    display: flex;
+    gap: 20px;
+}
+
+label {
+    color: var(--second-color);
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--main-color);
+}
+
+
+
+/* ==== RESUMEN DEL PEDIDO ==== */
+.pedido {
+    width: 40%;
+    background: #1c1c1c;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #333;
+    box-shadow: 0 0 20px #0007;
+}
+
+.pedido h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 20px;
+    color: var(--main-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    text-align: left;
+    color: var(--second-color);
+    padding-bottom: 10px;
+}
+
+td {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.total td {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+
+/* ==== MÉTODOS DE PAGO ==== */
+.pedido h3 {
+    margin: 20px 0 10px;
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+label input[type="radio"] {
+    accent-color: var(--main-color);
+    margin-right: 10px;
+}
+
+.tarjetas {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.terminos {
+    margin-top: 15px;
+}
+
+
+
+/* ==== BOTÓN DE PAGAR ==== */
+.btn-pagar {
+    background: var(--main-color);
+    color: var(--text-color);
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.btn-pagar:hover {
+    background: #ffa733;
+    box-shadow: 0 6px 30px rgba(255,167,59,0.18);
+    transform: translateY(-3px) scale(1.03);
+}

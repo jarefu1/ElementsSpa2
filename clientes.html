@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Clientes - Elements Spa</title>
+        <link rel="stylesheet" href="clientes.css">
+    </head>
+    <body>
+        <!-- encabesado  -->
+        <header>
+            <a href="#" class="logo">
+                <img src="imagenes/LogoElements.png" alt="Logo Elements Spa" width="70"> Elements Spa
+            </a>  
+
+            <ul class="navlist">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="clientes.html" class="active" >Clientes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="reservas.html" >Reservas</a></li>
+                <li><a href="productos.html" >Productos</a></li>
+            </ul>
+
+            <div>
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </header>
+        <!-- encabesdo -->
+        <section class="home">
+            <div class="home-grid">
+                <!-- Columna 1: Formulario -->
+                <div class="cliente-form">
+                    <h2>Registrar Cliente</h2>
+                    <form>
+                        <label>Nombre:
+                            <input type="text" required>
+                        </label>
+
+                        <label>DNI:
+                            <input type="text" pattern="\d{8}" required>
+                        </label>
+
+                        <label>Correo:
+                            <input type="email" required>
+                        </label>
+
+                        <label>Teléfono:
+                            <input type="tel" required>
+                        </label>
+
+                        <label>Preferencia:
+                            <select required>
+                                <option value="">-- Selecciona --</option>
+                                <option>Masajes</option>
+                                <option>Faciales</option>
+                                <option>Manos y Pies</option>
+                            </select>
+                        </label>
+
+                        <button type="submit" class="login-btn">Guardar</button>
+                    </form>
+                </div>
+
+                <!-- Columna 2: Lista de clientes (Grid de tarjetas) -->
+                <div class="clientes-list">
+                    <h2>Clientes</h2>
+                    <!-- Barra de búsqueda -->
+                    <div class="acciones-clientes">
+                        <input type="text" id="buscadorClientes" placeholder="Buscar por nombre o DNI...">
+                        <select id="ordenarClientes">
+                            <option value="">Ordenar...</option>
+                            <option value="nombreAsc">Nombre A-Z</option>
+                            <option value="nombreDesc">Nombre Z-A</option>
+                            <option value="dniAsc">DNI ascendente</option>
+                            <option value="dniDesc">DNI descendente</option>
+                        </select>
+                    </div>
+                    <div class="clientes-grid">
+                        <!-- tarjeta ejemplo -->
+                        <article class="cliente-card">
+                            <div class="cliente-meta">
+                                <img src="imagenes/avatar-placeholder.png" alt="Avatar" class="cliente-avatar">
+                                <div class="cliente-info">
+                                    <h3>María Pérez</h3>
+                                    <p>DNI: 12345678</p>
+                                    <p>Preferencia: Masajes</p>
+                                </div>
+                            </div>
+                            <div class="cliente-actions">
+                                <button class="btn-small">Ver</button>
+                                <button class="btn-small">Editar</button>
+                            </div>
+                        </article>
+
+                        <!-- duplica / modifica estas tarjetas según necesites -->
+                        <article class="cliente-card">
+                            <div class="cliente-meta">
+                                <img src="imagenes/avatar-placeholder.png" alt="Avatar" class="cliente-avatar">
+                                <div class="cliente-info">
+                                    <h3>Carlos Ruiz</h3>
+                                    <p>DNI: 87654321</p>
+                                    <p>Preferencia: Faciales</p>
+                                </div>
+                            </div>
+                            <div class="cliente-actions">
+                                <button class="btn-small">Ver</button>
+                                <button class="btn-small">Editar</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer>
+            <p>&copy; 2025 Elements Spa</p>
+        </footer>
+        <script src="clientes.js" defer></script>
+    </body>
+</html>

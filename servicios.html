@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Servicios - Elements Spa</title>
+    <link rel="stylesheet" href="servicios.css">
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <a href="#" class="logo">
+        <img src="imagenes/LogoElements.png" alt="Logo Elements Spa" width="70">
+        Elements Spa
+      </a>
+
+      <ul class="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="servicios.html" class="active">Servicios</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html" class="login-btn">Login</a></li>
+      </ul>
+    </header>
+
+    <main class="home">
+      <!-- LISTADO DE SERVICIOS -->
+      <section class="servicios-container">
+        <h2>Servicios del Spa</h2>
+        <p>
+          Gestiona los servicios ofrecidos por Elements Spa:
+          puedes agregar, buscar, editar, eliminar y ordenar.
+        </p>
+
+        <!-- BUSCAR y ORDENAR -->
+        <div class="acciones-servicios" style="margin-bottom: 25px; width: 100%; max-width: 900px;">
+          <input
+            type="text"
+            id="buscadorServicios"
+            placeholder="Buscar por nombre o categoría..."
+            style="padding:10px; border-radius:8px; border:none; outline:none; width:60%; max-width:400px; margin-right:10px;"
+          >
+          <select
+            id="ordenarServicios"
+            style="padding:10px; border-radius:8px; border:none; outline:none; width:35%; max-width:230px;"
+          >
+            <option value="">Ordenar...</option>
+            <option value="nombreAsc">Nombre A-Z</option>
+            <option value="nombreDesc">Nombre Z-A</option>
+            <option value="precioAsc">Precio menor a mayor</option>
+            <option value="precioDesc">Precio mayor a menor</option>
+          </select>
+        </div>
+
+        <!-- AQUÍ SE PINTAN LAS TARJETAS DE SERVICIOS -->
+        <div class="servicios-flex" id="serviciosLista">
+          <!-- contenido dinámico desde servicios.js -->
+        </div>
+      </section>
+
+      <!-- FORMULARIO DE REGISTRO / EDICIÓN -->
+      <section class="registro-container">
+        <h2>Registrar / Editar Servicio</h2>
+        <form id="formServicios">
+          <label style="width:100%; text-align:left; max-width:700px;">
+            Nombre del servicio<br>
+            <input type="text" id="nombreServicio" placeholder="Ej. Masaje relajante">
+          </label>
+          <br><br>
+
+          <label style="width:100%; text-align:left; max-width:700px;">
+            Categoría<br>
+            <select id="categoriaServicio">
+              <option value="">Seleccione una categoría</option>
+              <option value="Masajes">Masajes</option>
+              <option value="Faciales">Faciales</option>
+              <option value="Manos y Pies">Manos y Pies</option>
+              <option value="Paquetes">Paquetes</option>
+            </select>
+          </label>
+          <br><br>
+
+          <label style="width:100%; text-align:left; max-width:700px;">
+            Precio (S/.)<br>
+            <input type="number" id="precioServicio" min="0" step="0.1" placeholder="Ej. 120">
+          </label>
+          <br><br>
+
+          <label style="width:100%; text-align:left; max-width:700px;">
+            Duración (minutos)<br>
+            <input type="number" id="duracionServicio" min="0" step="5" placeholder="Ej. 60">
+          </label>
+          <br><br>
+
+          <label style="width:100%; text-align:left; max-width:700px;">
+            Nivel / Tipo de servicio<br>
+            <select id="nivelServicio">
+              <option value="">Seleccione una opción</option>
+              <option value="Básico">Básico</option>
+              <option value="Premium">Premium</option>
+              <option value="Deluxe">Deluxe</option>
+            </select>
+          </label>
+          <br><br>
+
+          <button type="submit" class="login-btn">Guardar servicio</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Elements Spa</p>
+    </footer>
+
+    <script src="servicios.js" defer></script>
+  </body>
+</html>

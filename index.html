@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Elements Spa - Inicio</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- Encabezado superior -->
+        <header>
+            <a href="#" class="logo">
+                <img src="imagenes/LogoElements.png" alt="Logo Elements Spa" width="70"> Elements Spa
+            </a>  
+
+            <ul class="navlist">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="clientes.html" class="active" >Clientes</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="reservas.html" >Reservas</a></li>
+                <li><a href="productos.html" >Productos</a></li>
+            </ul>
+
+            <div>
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </header>
+
+        <!-- SECCIÓN PRINCIPAL -->
+        <section class="home" id="home">
+            <aside class="sidebar">
+                <h2>Bienestar Total</h2>
+                <p>Relájate, desconecta y deja que cuidemos de ti.</p>
+                <p>✨ Masajes, faciales y terapias naturales ✨</p>
+            </aside>
+
+            <div class="carousel">
+                <div class="slides">
+                    <img src="imagenes/banner1.png" alt="Spa 1">
+                    <img src="imagenes/banner2.jpg" alt="Spa 2">
+                    <img src="imagenes/banner3.jpg" alt="Spa 3">
+                    <img src="imagenes/banner1.png" alt="Spa 1 duplicada">
+                </div>
+            </div>
+
+            <div class="home-content">
+                <h1>Relájate con <span>Elements Spa</span></h1>
+                <a href="#" class="btn" onclick="compararPromociones()">Comparar Promociones</a>
+                <a href="#" class="btn2" onclick="mostrarOfertas()">Ver Ofertas</a>
+                <p id="resultado" style="margin-top:20px; font-weight:bold;"></p>
+            </div>
+        </section>
+
+        <!-- Pie de página -->
+        <footer> 
+            <marquee>✨ Promoción del mes: Masaje relajante + facial por S/129 ✨</marquee>
+            <p>&copy; 2025 Elements Spa</p>
+        </footer>
+        <script src="index.js" defer></script>
+
+    </body>
+</html>
+

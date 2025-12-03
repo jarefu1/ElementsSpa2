@@ -1,0 +1,226 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 9 sept 2025, 19:33:05
+    Author     : USUARIO
+*/
+/*estilo del cuerpo*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+:root {
+  --main-color:#ff9f0d;
+--text-color:#fff;
+--other-color:#212121;
+--second-color:#9e9e9e;
+--bg-color:  #111;
+
+--big-font: 4.5rem;
+--h2-font: 2.6rem;
+--p-font: 1.1rem;
+
+ 
+}
+body {
+/*    font-family: Arial, sans-serif;*/
+/*    margin: 0;elimina el margen del navegador por defecto
+    padding: 0;elina padding*/
+    background: var(--bg-color);/*color de fondo*/
+    color: var(--text-color);/*coloe de tecto principal gris*/
+/*    text-align: center;  centra títulos, párrafos e imágenes */
+}
+/* etilo del fondo del baner */
+
+ /*heder*/
+header {
+    position: fixed;
+    width: 100%;
+    top:0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10%;/*espacio interno del header*/
+    background: transparent;/*fondo negro*/
+    transition: all 0.5s ease;
+    color: var(--text-color);/*color de texto blanco*/
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.login-btn {
+  background: #ff9f0d;               /* color naranja */
+  color: #fff;                       /* texto blanco */
+  padding: 10px 25px;                /* espacio interno */
+  border: none;
+  border-radius: 50px;               /* forma ovalada */
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 0 20px #ff9f0d;      /* brillo exterior */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.login-btn:hover {
+  background: #ffa733;               /* tono más claro al pasar el mouse */
+  box-shadow: 0 0 30px #ffa733;
+  transform: scale(1.05);            /* pequeño efecto de aumento */
+}
+
+
+.navlist{
+    display:  flex;
+    
+}
+
+.navlist a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin: 0 30px;
+    transition: all 0.5s ease;
+    
+}
+.navlist a:hover{
+    color: var(--main-color);
+}
+
+.navlist a:active{
+    color: var(--main-color);
+}
+
+
+
+
+/*HOME*/
+section {
+    padding: 200px 14% 60px;
+}
+
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    margin: 0 10px;  /*separacio en tre enlaces*/
+    color: gold;    /*color del texto de los enlaces*/
+    text-decoration: none;  /* quita el subrayado por defecto*/
+
+
+header h1 {/*selector del titulo  dentro del header*/
+    margin: 0;/*elimina margens*/
+}
+
+
+ /*marquecina amariya del banner */
+header marquee {
+    color: gold;/*color  texto*/
+    font-weight: bold; /*aplica negrita*/
+}
+
+ /*Estilo especial para la sección de bienvenida */
+.bienvenida {
+    text-align:/* center;centrado*/
+    background: #f9f9f9;/*fondo*/
+    border: 2px solid #d4af37;   /*borde dorado*/ 
+    border-radius: 10px;/*radios de los bordes del cuadrito*/
+    padding: 20px;
+    margin: 20px auto;/*margenes superior inferior y centrado*/
+    width: 80%;/*ancho relativo para dar espacio alrededor*/
+}
+/*estilo del h2 de la bienvenidas*/
+.bienvenida h2 {
+    font-size: 2.2em;   /* agranda el título /*/
+    color: #d4af37;   /*  dorado */
+    margin-bottom: 10px;/*espacio debajo del titulo*/
+}
+/*estilo de parrafo dentro de bienvenida*/
+.bienvenida p {
+    font-size: 1.3em;   /* agranda el texto */
+    color: #333; color
+    font-style: italic;/*  para darle un toque elegante */
+}
+
+/*estilo del del bloque de nave gacion*/
+nav {
+    margin: 10px 0;/*margen vertical
+}
+
+ /*para el texto amarillo en el banner */
+
+/*estilo del contenido principal*/
+main {
+    padding: 70px 14% 60px;/* espaciado interno */
+}
+
+ /*estilo del Formularios centrados */
+form {
+    display: inline-block;   /* para que el formulario sea como un bloque centrado */
+    text-align: left;       /*  dentro del formulario, alinear labels e inputs a la izquierda */
+    margin: 20px auto;       /* margen automático para centrar */
+    background: #f4f4f4;/*fondo del formulario */
+    padding: 40px;/*espacio interno amplio*/
+    border-radius: 8px;/*bordes redondeados*/
+}
+
+ /*Inputs y textarea un poco más amplios 
+campos del formulario*/
+input, select, textarea {
+    width: 100%;/*espacio que ocupan dentro del contenedor*/
+    padding: 8px;/*relleno interno/*/
+    margin-top: 5px;/*espacio parte superior/*/
+    margin-bottom: 12px;/*esapacio inferior*/
+    border: 1px solid #ccc;/*un borde de gris claro*/
+    border-radius: 5px;/*radio del borde redondo/*/
+}
+
+/* Botón centrado */
+button {
+    display: block; /*comportamiento como bloke para centrarlo con el margin auto*/
+    margin: 0 auto;/*centrado horisontal*/
+    background: gold;/*fondo dorado*/
+    border: none;/*quita bordes*/
+    padding: 10px 20px;/*espacio interno*/
+    border-radius: 5px;/*los bordes redondos*/
+    font-weight: bold;/*texto en negrita/*/
+    cursor: pointer;/*cambia el cursor al ponerse encima*/
+}
+
+/*estilo cambio del cursor */
+button:hover {
+    background: darkgoldenrod;/*color de fondo al hover*/
+    color: white;/*olor del texto al hover*/
+}
+/*piesito de pagina*/
+footer {
+    background: black;/*fonbdo negro*/
+    color: white;/*texto blanco*/
+    text-align: center;/*centrado de texto*/
+    padding: 10px;/*espacio interno*/
+    margin-top: 20px;/*separacion de3l contenido  superior */
+}

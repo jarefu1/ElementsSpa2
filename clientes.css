@@ -1,0 +1,619 @@
+/* ===========================
+   clientes.css - Elements Spa
+   Con animaciones y responsividad
+   =========================== */
+
+/* Reset y variables */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+:root {
+    --main-color: #ff9f0d;
+    --text-color: #fff;
+    --other-color: #212121;
+    --second-color: #9e9e9e;
+    --bg-color: #111;
+
+    --big-font: 4.5rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+}
+
+/* Reduce motion user preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* Body */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ===========================
+   HEADER -> animación de entrada
+   =========================== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10%;
+    background: transparent;
+    color: var(--text-color);
+    /* transición para cambios de estado */
+    transition: all 0.45s ease;
+    /* animación de carga (fade + descend) */
+    animation: headerEntrance 700ms cubic-bezier(.22,.9,.35,1) both;
+}
+
+/* Keyframes para la entrada del header */
+@keyframes headerEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 28px;
+    font-weight: 700;
+    z-index: 1001;
+}
+
+/* Botón login: transición y pequeño pulso al focus/active */
+.login-btn {
+  background: var(--main-color);               /* color naranja */
+  color: var(--text-color);                       /* texto blanco */
+  padding: 10px 25px;                /* espacio interno */
+  border: none;
+  border-radius: 50px;               /* forma ovalada */
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 0 20px var(--main-color);      /* brillo exterior */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Efecto hover/active */
+.login-btn:hover {
+  background: #ffa733;               /* tono más claro al pasar el mouse */
+  box-shadow: 0 0 30px #ffa733;
+  transform: scale(1.05);            /* pequeño efecto de aumento */
+}
+
+/* Pulso sutil en estado focus (accesibilidad visual) */
+.login-btn:focus {
+    outline: none;
+    animation: btnPulse 1.6s infinite ease-in-out;
+}
+
+@keyframes btnPulse {
+    0% {
+        box-shadow: 0 0 12px rgba(255,159,13,0.12);
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        box-shadow: 0 0 28px rgba(255,159,13,0.18);
+        transform: translateY(-2px) scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 12px rgba(255,159,13,0.12);
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* MENÚ NORMAL (Desktop) */
+
+
+.navlist a.active {
+    color: var(--main-color);
+}
+
+.navlist a.active::after {
+    width: 60%;
+}
+
+.navlist{
+    display: flex;
+    gap: 1rem;
+}
+
+.navlist a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin: 0 18px;
+    transition: color 300ms ease, transform 250ms ease;
+    position: relative;
+}
+
+
+
+/* micro-animación: underline al pasar */
+.navlist a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    transition: width 300ms ease, left 300ms ease;
+    transform: translateX(-50%);
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+    transform: translateY(-2px);
+}
+
+.navlist a:hover::after {
+    width: 60%;
+    left: 50%;
+}
+
+/* BOTÓN HAMBURGUESA */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    header {
+        padding: 18px 5%;
+    }
+    
+    .navlist a {
+        margin: 0 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mostrar hamburguesa en móvil */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Ocultar menú normal */
+    .navlist {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .navlist.active {
+        right: 0;
+    }
+    
+    .navlist li {
+        margin: 15px 0;
+    }
+    
+    .navlist a {
+        margin: 0;
+        font-size: 1.2rem;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Ajustar logo y botón login */
+    .logo {
+        font-size: 24px;
+    }
+    
+    .login-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+        position: relative;
+        z-index: 1001;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 4%;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .logo img {
+        width: 50px;
+    }
+    
+    .navlist {
+        width: 100%;
+    }
+}
+/* Animación hamburguesa a X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Asegurar que el contenido no se desborde */
+body.menu-open {
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   HOME / GRID PRINCIPAL
+   =========================== */
+.home {
+    margin-top: 120px;
+    padding: 70px 10%;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* grid de dos columnas: formulario | lista */
+.home-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ---------- Columna formulario ---------- */
+.cliente-form {
+    background: #1a1a1a;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    transform: translateY(6px);
+    transition: transform 400ms ease, box-shadow 300ms ease;
+    /* animación de aparición */
+    animation: fadeUp 600ms ease both;
+}
+
+/* si quieres que el formulario destaque al pasar el mouse */
+.cliente-form:hover {
+    transform: translateY(0);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+.cliente-form h2 {
+    color: var(--main-color);
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.cliente-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cliente-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    color: var(--second-color);
+}
+
+.cliente-form input,
+.cliente-form select {
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: none;
+    background: #0f0f0f;
+    color: var(--text-color);
+}
+
+/* Botón principal reutiliza .login-btn */
+.cliente-form .login-btn {
+    width: 100%;
+    margin-top: 6px;
+}
+
+/* ---------- Columna lista de clientes (Grid interno) ---------- */
+.clientes-list h2 {
+    color: var(--main-color);
+    margin-bottom: 12px;
+}
+
+/* grid para tarjetas de clientes: 2-3 columnas según ancho */
+.clientes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+    /* pequeño delay antes de que las tarjetas aparezcan */
+    opacity: 1;
+}
+
+/* tarjeta individual */
+.cliente-card {
+    background: linear-gradient(180deg, rgba(255,159,13,0.06), rgba(255,159,13,0.02));
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    transform: translateY(18px);
+    opacity: 0;
+    transition: transform 400ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms ease;
+    will-change: transform, opacity;
+    /* animación: aparición desde abajo */
+    animation: fadeUp 600ms cubic-bezier(.22,.9,.35,1) both;
+}
+
+/* Estagger: retrasos por posición para efecto en cascada */
+.clientes-grid .cliente-card:nth-child(1) {
+    animation-delay: 0.06s;
+}
+.clientes-grid .cliente-card:nth-child(2) {
+    animation-delay: 0.12s;
+}
+.clientes-grid .cliente-card:nth-child(3) {
+    animation-delay: 0.18s;
+}
+.clientes-grid .cliente-card:nth-child(4) {
+    animation-delay: 0.24s;
+}
+.clientes-grid .cliente-card:nth-child(5) {
+    animation-delay: 0.30s;
+}
+.clientes-grid .cliente-card:nth-child(6) {
+    animation-delay: 0.36s;
+}
+/* si hay más tarjetas, seguirán aplicando la animación sin problemas */
+
+/* fila superior con avatar y datos: usa Flexbox */
+.cliente-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* avatar con animación flotante sutil */
+.cliente-avatar {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255,159,13,0.2);
+    transform-origin: center;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+    animation: avatarFloat 4.6s ease-in-out infinite;
+}
+
+.cliente-avatar:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+}
+
+@keyframes avatarFloat {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-4px) scale(1.01);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.cliente-info h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+.cliente-info p {
+    margin: 2px 0;
+    color: var(--second-color);
+    font-size: 0.9rem;
+}
+
+/* acciones (botones pequeños) alineadas a la derecha */
+.cliente-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.btn-small {
+    background: transparent;
+    border: 1px solid rgba(255,159,13,0.18);
+    color: var(--main-color);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 220ms ease, transform 180ms ease, box-shadow 220ms ease;
+}
+
+.btn-small:hover {
+    background: rgba(255,159,13,0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+    padding: 26px 10%;
+    text-align: center;
+    color: var(--second-color);
+    border-top: 1px solid rgba(255,255,255,0.03);
+    margin-top: 36px;
+    background: transparent;
+    animation: footerEntrance 700ms ease both;
+}
+
+@keyframes footerEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   KEYFRAMES UTILES
+   - fadeUp: entrada desde abajo
+   - (ya definimos btnPulse y avatarFloat y headerEntrance)
+   =========================== */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 980px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+    .cliente-form {
+        width: 100%;
+    }
+    .registro-container, .clientes-list {
+        width: 100%;
+    }
+    .navlist {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header {
+        padding: 20px 6%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cliente-card {
+        height: auto;
+        padding: 12px;
+    }
+    .clientes-grid {
+        gap: 12px;
+    }
+    .cliente-avatar {
+        width: 48px;
+        height: 48px;
+    }
+    .logo {
+        font-size: 20px;
+        gap: 8px;
+    }
+    header {
+        padding: 14px 5%;
+    }
+    .navlist a {
+        margin: 6px 8px;
+        font-size: 0.95rem;
+    }
+    .home {
+        padding: 40px 6%;
+        margin-top: 100px;
+    }
+}
+
+/* ===========================
+   Pequeñas mejoras visuales
+   =========================== */
+/* sombra global para foco en inputs */
+.cliente-form input:focus,
+.cliente-form select:focus {
+    outline: none;
+    box-shadow: 0 6px 18px rgba(255,159,13,0.06);
+    transform: translateY(-1px);
+}
+
+/* acceso keyboard: foco visible en pequenos botones */
+.btn-small:focus, .login-btn:focus {
+    outline: 2px solid rgba(255,159,13,0.12);
+    outline-offset: 2px;
+}
